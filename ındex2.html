@@ -1,0 +1,1033 @@
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Pınar Şahan | UI/UX & Web Designer</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <style>
+
+        /* =========================
+           TEMEL
+        ========================= */
+
+        :root {
+            --yellow: #dbd31e;
+            --black: #0a0a0a;
+            --cream: #f5eedc;
+            --dark-gray: #171717;
+            --white: #ffffff;
+            --light-gray: #cccccc;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Outfit", sans-serif;
+            background: var(--cream);
+            color: var(--black);
+            overflow-x: hidden;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+        }
+
+        .container {
+            width: min(1150px, calc(100% - 48px));
+            margin: auto;
+        }
+
+        section {
+            padding: 110px 0;
+        }
+
+        .section-title {
+            font-size: clamp(42px, 6vw, 72px);
+            line-height: 0.95;
+            font-weight: 800;
+            letter-spacing: -0.05em;
+            margin-bottom: 50px;
+        }
+
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            background: var(--yellow);
+            padding: 55px 0;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) 430px;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .hero-text {
+            padding: 30px 0;
+        }
+
+        .hero-title {
+            font-size: clamp(70px, 10vw, 150px);
+            line-height: 0.85;
+            letter-spacing: -0.07em;
+            font-weight: 900;
+        }
+
+        .hero-title span {
+            display: block;
+        }
+
+        .hero-subtitle {
+            margin-top: 35px;
+            font-family: "Space Mono", monospace;
+            font-size: clamp(13px, 1.5vw, 19px);
+            font-weight: 700;
+            letter-spacing: 0.13em;
+        }
+
+        .profile-wrapper {
+            padding: 30px 0;
+        }
+
+        .profile-photo {
+            width: 100%;
+            height: 560px;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 30px;
+        }
+
+
+        /* =========================
+           HAKKIMDA
+        ========================= */
+
+        .about {
+            background: var(--cream);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1.05fr 0.95fr;
+            gap: 90px;
+            align-items: start;
+        }
+
+        .about-text {
+            font-size: 18px;
+            line-height: 1.8;
+            white-space: pre-line;
+            color: #222;
+        }
+
+        .contact {
+            margin-top: 45px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            font-family: "Space Mono", monospace;
+            font-size: 14px;
+        }
+
+        .contact-icon {
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            background: var(--black);
+            color: var(--yellow);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+
+        /* =========================
+           SOSYAL MEDYA
+        ========================= */
+
+        .social-links {
+            display: flex;
+            gap: 12px;
+            margin-top: 25px;
+            flex-wrap: wrap;
+        }
+
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 9px;
+
+            min-width: 125px;
+            padding: 12px 18px;
+
+            background: var(--black);
+            color: var(--yellow);
+
+            border: 1px solid var(--black);
+            border-radius: 8px;
+
+            text-decoration: none;
+
+            font-family: "Space Mono", monospace;
+            font-size: 12px;
+            font-weight: 700;
+
+            transition: all 0.25s ease;
+        }
+
+        .social-link:hover {
+            background: var(--yellow);
+            color: var(--black);
+            border-color: var(--black);
+            transform: translateY(-3px);
+        }
+
+        .social-icon {
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+
+        /* =========================
+           UZMANLIK
+        ========================= */
+
+        .skills {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .skill {
+            padding: 22px 15px;
+            background: var(--yellow);
+            text-align: center;
+            font-size: 15px;
+            font-weight: 700;
+            border-radius: 10px;
+            transition: transform 0.25s ease;
+        }
+
+        .skill:nth-child(even) {
+            background: var(--black);
+            color: var(--yellow);
+        }
+
+        .skill:hover {
+            transform: translateY(-4px);
+        }
+
+
+        /* =========================
+           PROJELER
+        ========================= */
+
+        .projects {
+            background: var(--black);
+            color: var(--cream);
+        }
+
+        .projects .section-title {
+            color: var(--yellow);
+        }
+
+        .project-list {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 28px;
+        }
+
+        .project-card {
+            background: var(--dark-gray);
+            border-radius: 18px;
+            overflow: hidden;
+            border: 1px solid #292929;
+            transition: transform 0.3s ease;
+            min-width: 0;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+        }
+
+
+        /* =========================
+           PROJE GÖRSELLERİ
+           TAMAMI GÖRÜNSÜN
+        ========================= */
+
+        .project-image-wrapper {
+            width: 100%;
+            height: 360px;
+
+            background: #111;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 18px;
+            overflow: hidden;
+        }
+
+        .project-image {
+            width: 100%;
+            height: 100%;
+
+            object-fit: contain;
+            object-position: center;
+
+            border-radius: 8px;
+        }
+
+
+        /* =========================
+           PROJE İÇERİĞİ
+        ========================= */
+
+        .project-content {
+            padding: 28px;
+        }
+
+        .project-number {
+            font-family: "Space Mono", monospace;
+            color: var(--yellow);
+            font-size: 12px;
+            margin-bottom: 12px;
+        }
+
+        .project-card h3 {
+            color: var(--yellow);
+            font-size: 27px;
+            margin-bottom: 10px;
+        }
+
+        .project-card p {
+            color: var(--light-gray);
+            line-height: 1.7;
+            font-size: 15px;
+        }
+
+
+        /* =========================
+           PROJE LİNKİ
+        ========================= */
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+
+            margin-top: 22px;
+            padding: 12px 20px;
+
+            background: var(--yellow);
+            color: var(--black);
+
+            text-decoration: none;
+            border-radius: 8px;
+
+            font-family: "Space Mono", monospace;
+            font-size: 12px;
+            font-weight: 700;
+
+            transition: all 0.25s ease;
+        }
+
+        .project-link:hover {
+            background: var(--white);
+            transform: translateX(4px);
+        }
+
+
+        /* =========================
+           EĞİTİMLER
+        ========================= */
+
+        .education {
+            background: var(--cream);
+        }
+
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .education-card {
+            background: var(--yellow);
+            padding: 30px;
+            min-height: 190px;
+            border-radius: 16px;
+        }
+
+        .education-card h3 {
+            font-size: 21px;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        .education-card .school {
+            font-family: "Space Mono", monospace;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .education-card .year {
+            font-family: "Space Mono", monospace;
+            font-size: 13px;
+            opacity: 0.65;
+        }
+
+        .education-card p {
+            margin-top: 18px;
+            line-height: 1.6;
+        }
+
+
+        /* =========================
+           SERTİFİKALAR
+        ========================= */
+
+        .certificates {
+            margin-top: 70px;
+        }
+
+        .certificate-title {
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 25px;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background: var(--black);
+            color: var(--cream);
+            padding: 35px 0;
+            text-align: center;
+        }
+
+        footer p {
+            font-family: "Space Mono", monospace;
+            font-size: 12px;
+            letter-spacing: 0.12em;
+        }
+
+
+        /* =========================
+           TABLET
+        ========================= */
+
+        @media (max-width: 900px) {
+
+            .hero {
+                padding: 45px 0;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .hero-text {
+                padding: 20px 0;
+            }
+
+            .profile-wrapper {
+                padding: 25px 0;
+            }
+
+            .profile-photo {
+                height: 500px;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 70px;
+            }
+
+            .project-list {
+                grid-template-columns: 1fr;
+            }
+
+            .project-image-wrapper {
+                height: 380px;
+            }
+        }
+
+
+        /* =========================
+           MOBİL
+        ========================= */
+
+        @media (max-width: 600px) {
+
+            section {
+                padding: 75px 0;
+            }
+
+            .container {
+                width: min(100% - 32px, 600px);
+            }
+
+            .hero {
+                padding: 35px 0;
+            }
+
+            .hero-title {
+                font-size: 62px;
+            }
+
+            .hero-subtitle {
+                margin-top: 25px;
+                font-size: 12px;
+            }
+
+            .hero-text {
+                padding: 15px 0;
+            }
+
+            .profile-wrapper {
+                padding: 20px 0;
+            }
+
+            .profile-photo {
+                height: 420px;
+                border-radius: 22px;
+            }
+
+            .section-title {
+                margin-bottom: 35px;
+            }
+
+            .about-text {
+                font-size: 16px;
+                line-height: 1.75;
+            }
+
+            .skills {
+                grid-template-columns: 1fr;
+            }
+
+            .education-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .project-list {
+                grid-template-columns: 1fr;
+            }
+
+            .project-image-wrapper {
+                height: auto;
+                min-height: 280px;
+                padding: 14px;
+            }
+
+            .project-image {
+                height: auto;
+                max-height: 340px;
+            }
+
+            .project-content {
+                padding: 23px;
+            }
+
+            .project-link {
+                width: 100%;
+            }
+
+            .social-links {
+                flex-direction: column;
+            }
+
+            .social-link {
+                width: 100%;
+            }
+        }
+
+
+        /* =========================
+           KÜÇÜK TELEFON
+        ========================= */
+
+        @media (max-width: 400px) {
+
+            .hero-title {
+                font-size: 54px;
+            }
+
+            .profile-wrapper {
+                padding: 15px 0;
+            }
+
+            .profile-photo {
+                height: 350px;
+                border-radius: 18px;
+            }
+
+            .project-image-wrapper {
+                min-height: 230px;
+                padding: 12px;
+            }
+
+            .project-image {
+                max-height: 280px;
+            }
+
+            .contact-item {
+                font-size: 11px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<header class="hero">
+
+    <div class="container">
+
+        <div class="hero-content">
+
+            <div class="hero-text">
+
+                <h1 class="hero-title">
+                    <span>PINAR</span>
+                    <span>ŞAHAN</span>
+                </h1>
+
+                <p class="hero-subtitle">
+                    UI/UX & WEB DESIGNER
+                </p>
+
+            </div>
+
+
+            <div class="profile-wrapper">
+
+                <img
+                    class="profile-photo"
+                    src="filmgunu.jpg"
+                    alt="Pınar Şahan"
+                >
+
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- =========================
+     HAKKIMDA
+========================= -->
+
+<section class="about">
+
+    <div class="container">
+
+        <div class="about-grid">
+
+            <div>
+
+                <h2 class="section-title">
+                    HAKKIMDA
+                </h2>
+
+                <p class="about-text">Merhaba, ben Pınar. UI/UX ve Web Designer olarak kullanıcı ihtiyaçlarını, estetik ve işlevsel dijital deneyimlere dönüştürmeye odaklanıyorum.
+
+Figma kullanarak modern ve kullanıcı odaklı web arayüzleri, responsive tasarımlar, prototipler ve kullanıcı akışları oluşturuyorum. Tasarım sürecinde görsel uyum kadar kullanılabilirlik, sadelik ve kullanıcı deneyimine de önem veriyorum.
+
+Web tasarıma olan ilgimi HTML, CSS, JavaScript, PHP ve MySQL bilgimle destekleyerek tasarımdan çalışan web projelerine uzanan bir bakış açısı geliştiriyorum.
+
+Her projeyi yeni bir şey öğrenmek, üretmek ve tasarım becerilerimi geliştirmek için bir fırsat olarak görüyorum. Tasarım ve teknolojinin kesiştiği noktada kendimi sürekli geliştirmeye devam ediyorum.</p>
+
+
+                <div class="contact">
+
+                    <div class="contact-item">
+                        <span class="contact-icon">✉</span>
+                        <span>pnr18732@gmail.com</span>
+                    </div>
+
+                    <div class="contact-item">
+                        <span class="contact-icon">☎</span>
+                        <span>+90 536 611 52 88</span>
+                    </div>
+
+                    <div class="contact-item">
+                        <span class="contact-icon">⌖</span>
+                        <span>Yalova</span>
+                    </div>
+
+                </div>
+
+
+                <!-- SOSYAL MEDYA -->
+
+                <div class="social-links">
+
+                    <a
+                        class="social-link"
+                        href="https://www.linkedin.com/in/p%C4%B1nar-%C5%9Fahan-4340b532b/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <span class="social-icon">in</span>
+                        LinkedIn
+                    </a>
+
+
+                    <!-- BURAYA KENDİ BEHANCE LİNKİNİ EKLE -->
+
+                    <a
+                        class="social-link"
+                        href="https://www.behance.net/pnr4"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <span class="social-icon">Bē</span>
+                        Behance
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- UZMANLIK -->
+
+            <div>
+
+                <h2 class="section-title">
+                    UZMANLIK<br>ALANLARIM
+                </h2>
+
+                <div class="skills">
+
+                    <div class="skill">UI/UX Tasarımı</div>
+                    <div class="skill">Web Tasarımı</div>
+                    <div class="skill">Responsive Tasarım</div>
+                    <div class="skill">Wireframe & Prototipleme</div>
+                    <div class="skill">Tasarım Sistemleri</div>
+                    <div class="skill">Frontend Geliştirme</div>
+                    <div class="skill">Kullanıcı Araştırması</div>
+                    <div class="skill">Kullanılabilirlik Tasarımı</div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PROJELER
+========================= -->
+
+<section class="projects">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            PROJELERİM
+        </h2>
+
+
+        <div class="project-list">
+
+
+            <!-- =========================
+                 PROJE 1 - FİLM GÜNÜ
+            ========================= -->
+
+            <article class="project-card">
+
+                <div class="project-image-wrapper">
+
+                    <img
+                        class="project-image"
+                        src="filmgunumockup.png"
+                        alt="Film Günü Web Projesi"
+                    >
+
+                </div>
+
+                <div class="project-content">
+
+                    <div class="project-number">
+                        01 / WEB PROJECT
+                    </div>
+
+                    <h3>
+                        Film Günü
+                    </h3>
+
+                    <p>
+                        PHP ve MySQL kullanılarak geliştirilen,
+                        içerik yönetimi ve responsive arayüz özelliklerine
+                        sahip web projesi.
+                    </p>
+
+                    <a
+                        class="project-link"
+                        href="https://filmgunu.infinityfreeapp.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Projeyi Görüntüle ↗
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- =========================
+                 PROJE 2 - LEON
+            ========================= -->
+
+            <article class="project-card">
+
+                <div class="project-image-wrapper">
+
+                    <img
+                        class="project-image"
+                        src="leon.png"
+                        alt="UI UX Web Tasarım Projesi"
+                    >
+
+                </div>
+
+                <div class="project-content">
+
+                    <div class="project-number">
+                        02 / UI UX DESIGN
+                    </div>
+
+                    <h3>
+                        UI/UX Web Tasarım
+                    </h3>
+
+                    <p>
+                        Figma kullanılarak hazırlanan modern,
+                        kullanıcı odaklı ve responsive web arayüzü.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <!-- =========================
+                 PROJE 3 - MIYAV
+            ========================= -->
+
+            <article class="project-card">
+
+                <div class="project-image-wrapper">
+
+                    <img
+                        class="project-image"
+                        src="mıyav.png"
+                        alt="Mıyav UI UX Projesi"
+                    >
+
+                </div>
+
+                <div class="project-content">
+
+                    <div class="project-number">
+                        03 / UI UX DESIGN
+                    </div>
+
+                    <h3>
+                        UI/UX Web Tasarım
+                    </h3>
+
+                    <p>
+                        Figma kullanılarak hazırlanan modern,
+                        kullanıcı odaklı ve responsive web arayüzü.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     EĞİTİMLER
+========================= -->
+
+<section class="education">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            EĞİTİMLERİM
+        </h2>
+
+        <div class="education-grid">
+
+            <div class="education-card">
+
+                <h3>
+                    ANADOLU ÜNİVERSİTESİ
+                </h3>
+
+                <div class="school">
+                    Türk Dili ve Edebiyatı
+                </div>
+
+                <div class="year">
+                    2019
+                </div>
+
+            </div>
+
+
+            <div class="education-card">
+
+                <h3>
+                    ANADOLU ÜNİVERSİTESİ
+                </h3>
+
+                <div class="school">
+                    Web Tasarım ve Kodlama
+                </div>
+
+                <div class="year">
+                    2026
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =========================
+             SERTİFİKALAR
+        ========================= -->
+
+        <div class="certificates">
+
+            <h2 class="certificate-title">
+                SERTİFİKALAR
+            </h2>
+
+            <div class="education-grid">
+
+                <div class="education-card">
+
+                    <h3>
+                        ANADOLU ÜNİVERSİTESİ
+                    </h3>
+
+                    <div class="school">
+                        Webde Görsel Tasarım Sertifika Programı
+                    </div>
+
+                    <div class="year">
+                        2025
+                    </div>
+
+                </div>
+
+
+                <div class="education-card">
+
+                    <h3>
+                        UDEMY
+                    </h3>
+
+                    <div class="school">
+                        Dijital Pazarlama
+                    </div>
+
+                    <div class="year">
+                        2025
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <div class="container">
+
+        <p>
+            © 2026 Pınar Şahan
+        </p>
+
+    </div>
+
+</footer>
+
+
+</body>
+</html>
+
